@@ -385,20 +385,32 @@
                 <div class="formbox">
                     <h3>Richiedi informazioni</h3>
                     <p>Compila il modulo: verrai ricontattato per una breve call conoscitiva.</p>
-                    <input class="field" placeholder="Nome e Cognome">
-                    <input class="field" placeholder="Telefono">
+                    <input class="field" id="nome" placeholder="Nome e Cognome">
+                    <input class="field" id="telefono" placeholder="Telefono">
                     <select class="field">
                         <option>Sono interessato a...</option>
                         <option>Risparmio e vantaggi come cliente</option>
                         <option>Collaborazione e crescita professionale</option>
                         <option>Entrambe le cose</option>
                     </select>
-                    <a class="btn primary" style="display:block;text-align:center" href="https://wa.me/393381909277" target="_blank">Invia richiesta su WhatsApp</a> 
+<a class="btn primary" style="display:block;text-align:center" href="#" onclick="inviaWhatsApp()">Invia richiesta su WhatsApp</a>                                                                                                                                                                                                     
                     <p style="margin-top:16px;">Oppure scrivimi subito: <strong>338 190 9277</strong></p>
                 </div>
             </div>
         </section>
     </main>
     <footer class="footer">© Innovazione & Crescita — Visione Azione. Ogni tuo passo lascia il segno.</footer>
+    <script>
+function inviaWhatsApp() {
+  var nome = document.getElementById("nome").value;
+  var telefono = document.getElementById("telefono").value;
+
+  var messaggio = "Ciao Roberto, mi chiamo " + nome + ". Il mio numero è " + telefono + ". Sono interessato ad approfondire la collaborazione e attendo un tuo contatto.";
+
+  var url = "https://wa.me/393381909277?text=" + encodeURIComponent(messaggio);
+
+  window.open(url, "_blank");
+}
+</script>
 </body>
 </html>
